@@ -6,9 +6,6 @@ class Solution:
         n, m, ptr1, ptr2 = len(arr1), len(arr2), 0, 0
         firstNum, secNum = 0, 0
 
-        #Safety check
-        if (n + m == 0): return 0
-
         #Find middle
         while ((ptr1+ptr2) <= (n + m)/2):
             #Shift numbers
