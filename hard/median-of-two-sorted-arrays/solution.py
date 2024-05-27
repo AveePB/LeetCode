@@ -1,12 +1,10 @@
 #https://leetcode.com/problems/median-of-two-sorted-arrays/
 class Solution:
 
-    UNDEFINED: int = 1e6 + 7
-
     def findMedianSortedArrays(self, arr1: list[int], arr2: list[int]) -> float:
         #Initialize parameters
         n, m, ptr1, ptr2 = len(arr1), len(arr2), 0, 0
-        firstNum, secNum = self.UNDEFINED, self.UNDEFINED
+        firstNum, secNum = 0, 0
 
         #Safety check
         if (n + m == 0): return 0
@@ -35,9 +33,6 @@ class Solution:
             else:
                 secNum = arr2[ptr2]
                 ptr2 += 1
-
-        #One of nums is undefined
-        if (firstNum == self.UNDEFINED): return secNum
 
         #Amount of numbers is odd
         if ((n + m) % 2 == 1):
